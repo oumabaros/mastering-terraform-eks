@@ -5,7 +5,7 @@ registry_url = "000000000000.dkr.ecr.us-east-1.localhost.localstack.cloud:4566/s
 kubectl get nodes
 
 To explore the localstack cluster with kubectl , you first need to authenticate to your cluster.
-awslocal eks update-kubeconfig --region us-east-1 --name <cluster-name> e.g. eks-sample
+awslocal eks update-kubeconfig --region us-east-1 --name  eks-fleet-portal-dev e.g. eks-sample
 
 Deploy sample-app to localstack ECR....Create ECR repo=> registry_url above. Build sample-app docker image with Paketo Build Pack.
 pack build sample-app:v3 --builder paketobuildpacks/builder-jammy-base (https://paketo.io/docs/)

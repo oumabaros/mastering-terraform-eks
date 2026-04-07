@@ -1,14 +1,18 @@
 variable "application_name" {
-  type = string
+  type    = string
+  default = "fleet-portal"
 }
 variable "environment_name" {
-  type = string
+  type    = string
+  default = "dev"
 }
 variable "primary_region" {
-  type = string
+  type    = string
+  default = "us-east-1"
 }
 variable "ecr_image_pushers" {
-  type = list(string)
+  type    = list(string)
+  default = ["Terraform"]
 }
 variable "vpc_cidr_block" {
   type = string
@@ -23,7 +27,8 @@ variable "node_size" {
   type = string
 }
 variable "admin_users" {
-  type = list(string)
+  type    = list(string)
+  default = ["markti"]
 }
 variable "k8s_namespace" {
   type = string

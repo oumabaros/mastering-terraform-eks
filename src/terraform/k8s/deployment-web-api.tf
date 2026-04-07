@@ -40,7 +40,7 @@ resource "kubernetes_deployment" "web_api" {
         }
 
         container {
-          image = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.primary_region}.amazonaws.com/${var.web_api_image.name}:${var.web_api_image.version}"
+          image = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.primary_region}.localhost.localstack.cloud:4566/${var.web_api_image.name}:latest" #${var.web_api_image.version}"
           name  = local.web_api_name
 
           port {

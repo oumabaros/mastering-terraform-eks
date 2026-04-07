@@ -1,7 +1,7 @@
-aws eks list-clusters
-aws eks describe-cluster --name demoeks
-aws eks describe-cluster --name demoeks --region us-east-1 --query 'cluster.endpoint' --output text
-aws eks update-kubeconfig --name demoeks
+awslocal eks list-clusters
+awslocal eks describe-cluster --name demoeks
+awslocal eks describe-cluster --name demoeks --region us-east-1 --query 'cluster.endpoint' --output text
+awslocal eks update-kubeconfig --name demoeks
 
 
 IAM Authentication Setup
