@@ -15,24 +15,30 @@ variable "ecr_image_pushers" {
   default = ["Terraform"]
 }
 variable "vpc_cidr_block" {
-  type = string
+  type    = string
+  default = "10.0.0.0/21"
 }
 variable "az_count" {
-  type = number
+  type    = number
+  default = 3
 }
 variable "node_image_type" {
-  type = string
+  type    = string
+  default = "AL2_x86_64"
 }
 variable "node_size" {
-  type = string
+  type    = string
+  default = "t3.medium"
 }
 variable "admin_users" {
   type    = list(string)
   default = ["markti"]
 }
 variable "k8s_namespace" {
-  type = string
+  type    = string
+  default = "app"
 }
 variable "k8s_service_account_name" {
-  type = string
+  type    = string
+  default = "fleet-portal"
 }
