@@ -12,7 +12,6 @@ services:
       - "0.0.0.0:443:443" # LocalStack HTTPS Gateway (Pro)
       - "0.0.0.0:5000:5000"
       - "0.0.0.0:80:80"
-      - "0.0.0.0:6443:6443"
     environment:
       - DEBUG=1
       - DOCKER_HOST=unix:///var/run/docker.sock

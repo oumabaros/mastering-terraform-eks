@@ -10,6 +10,11 @@ resource "helm_release" "csi_secrets_store" {
     value = "true"
   }
 
+  set {
+    name  = "installCRDs"
+    value = "true"
+  }
+
 }
 
 
@@ -20,6 +25,7 @@ resource "helm_release" "aws_secrets_provider" {
   chart      = "secrets-store-csi-driver-provider-aws"
   namespace  = "kube-system"
 
+  depends_on = [helm_release.csi_secrets_store]
 }
 
 locals {
@@ -30,6 +36,7 @@ locals {
 
 resource "kubernetes_manifest" "secret_provider_class" {
 
+  depends_on = [helm_release.csi_secrets_store]
   manifest = {
     apiVersion = "secrets-store.csi.x-k8s.io/v1"
     kind       = "SecretProviderClass"
